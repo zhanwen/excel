@@ -1,20 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <models>
-	<model id="deptModel" class="com.test.excel.jn.model.DeptModel">
-		<property name="deptName" column="1" excelTitleName="部门名称" dataType="String" maxLength="15"   default=""/>
-		<property name="deptCode" column="2" excelTitleName="部门编号" dataType="String" maxLength="15"   default="abc"/>
-		<property name="sendFileName" column="4" excelTitleName="发文简称" dataType="String" maxLength="15" isConvertable="true"  default="C">
-		<map>
-			<entry excel_key="永久" bean_value="c"></entry>
-			<entry excel_key="长期1" bean_value="send_1"></entry>
-			<entry excel_key="长期2" bean_value="send_2"></entry>
-			<entry excel_key="长期3" bean_value="send_3"></entry>
-			<entry excel_key="长期4" bean_value="send_4"></entry>
-			<entry excel_key="长期5" bean_value="send_5"></entry>
-		</map>
-		</property>
-		<property name="sendDate" column="3" excelTitleName="时间" dataType="Date" format="yyyy年MM月dd日 HH:mm:ss" maxLength="15"  default="10"/>
+	<model id="orderDetailModel" class="com.kev.team.bmagr.order.bean.OrderDetailList">
+		<property name="deliveryDate" column="1" excelTitleName="快递日期" dataType="Date" format="yyyy年MM月dd日 HH:mm:ss" maxLength="255" default="0000年00月00日 00:00:00"/>
+		<property name="logistics" column="2" excelTitleName="快递公司" dataType="String" maxLength="255" default=""/>
+		<property name="logisticsNo" column="3" excelTitleName="运单号" dataType="String" maxLength="255" default=""/>
+		<property name="orderNo" column="4" excelTitleName="订单号" dataType="String" maxLength="255" default=""/>
+		<property name="createDate" column="5" excelTitleName="订单日期" dataType="Date" format="yyyy年MM月dd日 HH:mm:ss" maxLength="255" default=""/>
+		<property name="goodsNo" column="6" excelTitleName="产品编码" dataType="String" maxLength="255" default=""/>
+		<property name="goodsName" column="7" excelTitleName="名称" dataType="String" maxLength="255" default=""/>
+		<property name="goodsProperty" column="8" excelTitleName="商品属性" dataType="String" maxLength="255" default=""/>
+		<property name="goodsCount" column="9" excelTitleName="数量" dataType="String" maxLength="255" default=""/>
+		<property name="receName" column="10" excelTitleName="收件人" dataType="String" maxLength="255" default=""/>
+		<property name="receTelephone" column="11" excelTitleName="电话" dataType="String" maxLength="255" default=""/>
+		<property name="receMobile" column="12" excelTitleName="手机" dataType="String" maxLength="255" default=""/>
+		<property name="receAddress" column="13" excelTitleName="地址" dataType="String" maxLength="255" default=""/>
+		<property name="remark" column="14" excelTitleName="会员备注" dataType="String" maxLength="255" default=""/>
+		<property name="adminRemark" column="15" excelTitleName="客服备注" dataType="String" maxLength="255" default=""/>
+		<property name="goodsSN" column="16" excelTitleName="产品型号" dataType="String" maxLength="255" default=""/>
 	</model>
 	
+	<model id="orderDetailImportModel" class="com.kev.team.centermall.order.bean.OrderDetailExcelBean">
+		<property name="deliveryDate" column="1" excelTitleName="快递日期" dataType="String" maxLength="255"/>
+		<property name="logistics" column="2" excelTitleName="快递公司" dataType="String" maxLength="255" default=""/>
+		<property name="logisticsNo" column="3" excelTitleName="运单号" dataType="String" maxLength="255" default=""/>
+		<property name="orderNo" column="4" excelTitleName="订单号" dataType="String" maxLength="255" default=""/>
+		<property name="createDate" column="5" excelTitleName="订单日期" dataType="String" maxLength="255" default=""/>
+		<property name="goodsNo" column="6" excelTitleName="产品编码" dataType="String" maxLength="255" default=""/>
+		<property name="goodsName" column="7" excelTitleName="名称" dataType="String" maxLength="255" default=""/>
+		<property name="goodsProperty" column="8" excelTitleName="商品属性" dataType="String" maxLength="255" default=""/>
+		<property name="goodsCount" column="9" excelTitleName="数量" dataType="String" maxLength="255" default=""/>
+		<property name="receName" column="10" excelTitleName="收件人" dataType="String" maxLength="255" default=""/>
+		<property name="receTelephone" column="11" excelTitleName="电话" dataType="String" maxLength="255" default=""/>
+		<property name="receMobile" column="12" excelTitleName="手机" dataType="String" maxLength="255" default=""/>
+		<property name="receAddress" column="13" excelTitleName="地址" dataType="String" maxLength="255" default=""/>
+		<property name="remark" column="14" excelTitleName="会员备注" dataType="String" maxLength="255" default=""/>
+		<property name="adminRemark" column="15" excelTitleName="客服备注" dataType="String" maxLength="255" default=""/>
+		<property name="goodsSN" column="16" excelTitleName="产品型号" dataType="String" maxLength="255" default=""/>
+	</model>
+	
+	
+	<model id="orderListModel" class="com.kev.team.bmagr.order.bean.OrderDetailList">
+		<property name="orderStatusId" column="1" excelTitleName="订单状态" dataType="String" maxLength="255" default=""/>
+		<property name="isPaid" column="2" excelTitleName="支付状态" dataType="String" maxLength="255" default=""/>
+		<property name="orderNo" column="3" excelTitleName="订单编号" dataType="String" maxLength="255" default=""/>
+		<property name="createDate" column="4" excelTitleName="订单日期" dataType="Date" format="yyyy年MM月dd日 HH:mm:ss" maxLength="255" default=""/>
+		<property name="userNo" column="5" excelTitleName="用户编号" dataType="String" maxLength="255" default=""/>
+		<property name="userLoginName" column="6" excelTitleName="用户名" dataType="String" maxLength="255" default=""/>
+		<property name="userLevel" column="7" excelTitleName="用户等级" dataType="String" maxLength="255" default=""/>
+		<property name="goodsNo" column="8" excelTitleName="商品编码" dataType="String" maxLength="255" default=""/>
+		<property name="goodsName" column="9" excelTitleName="商品名称" dataType="String" maxLength="255" default=""/>
+		<property name="goodsProperty" column="10" excelTitleName="商品规格" dataType="String" maxLength="255" default=""/>
+		<property name="goodsCount" column="11" excelTitleName="数量" dataType="String" maxLength="255" default=""/>
+		<property name="totalPrice" column="12" excelTitleName="消耗积分" dataType="String" maxLength="255" default=""/>
+		<property name="orderTypeId" column="13" excelTitleName="订单类型" dataType="String" maxLength="255" default=""/>
+		<property name="couponName" column="14" excelTitleName="优惠券类型" dataType="String" maxLength="255" default=""/>
+		<property name="receName" column="15" excelTitleName="收货人" dataType="String" maxLength="255" default=""/>
+		<property name="receTelephone" column="16" excelTitleName="固定电话" dataType="String" maxLength="255" default=""/>
+		<property name="receMobile" column="17" excelTitleName="手机" dataType="String" maxLength="255" default=""/>
+		<property name="receAddress" column="18" excelTitleName="详细地址" dataType="String" maxLength="255" default=""/>
+		<property name="receZipCode" column="19" excelTitleName="邮编" dataType="String" maxLength="255" default=""/>
+		<property name="deliveryDate" column="20" excelTitleName="配送时间" dataType="Date" format="yyyy年MM月dd日 HH:mm:ss" maxLength="255" default="0000年00月00日 00:00:00"/>
+		<property name="logistics" column="21" excelTitleName="物流公司" dataType="String" maxLength="255" default=""/>
+		<property name="logisticsNo" column="22" excelTitleName="物流单号" dataType="String" maxLength="255" default=""/>
+		<property name="remark" column="23" excelTitleName="订单客户留言" dataType="String" maxLength="255" default=""/>
+		<property name="adminRemark" column="24" excelTitleName="客服备注" dataType="String" maxLength="255" default=""/>
+	</model>
 	<!-- column :指excel没有表头名称时,可以对应所排的列号 -->
 </models>
